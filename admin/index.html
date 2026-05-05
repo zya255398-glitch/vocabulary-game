@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulary Admin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; min-height: 100vh; }
+
+    header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.4rem; }
+    .header-right { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    select, input[type=text] {
+      padding: 0.4rem 0.7rem; border-radius: 6px; border: none; font-size: 0.95rem;
+    }
+    .btn {
+      padding: 0.4rem 1rem; border-radius: 6px; border: none;
+      cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-save  { background: #FFD700; color: #333; }
+    .btn-add   { background: #4CAF50; color: white; }
+    .btn-del   { background: #f44336; color: white; padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+    .btn-up, .btn-dn { background: #ddd; color: #333; padding: 0.3rem 0.5rem; font-size: 0.8rem; }
+    .btn-sm    { background: rgba(255,255,255,0.2); color: white; padding: 0.25rem 0.6rem; font-size: 0.8rem; border-radius: 20px; }
+
+    #status {
+      font-size: 0.9rem; padding: 0.3rem 0.7rem; border-radius: 20px;
+      background: rgba(255,255,255,0.2); min-width: 80px; text-align: center;
+    }
+    #status.ok  { background: #4CAF50; }
+    #status.err { background: #f44336; }
+
+    main { max-width: 980px; margin: 2rem auto; padding: 0 1rem; display: flex; flex-direction: column; gap: 1rem; }
+
+    .card-panel {
+      background: white; border-radius: 12px; padding: 1rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .card-panel h3 { font-size: 0.95rem; color: #666; margin-bottom: 0.75rem; }
+
+    /* Config row */
+    .config-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .config-item { display: flex; align-items: center; gap: 0.5rem; }
+    .config-item label { font-weight: 600; color: #555; white-space: nowrap; }
+    .choice-btns { display: flex; gap: 0.4rem; }
+    .choice-btn {
+      width: 40px; height: 40px; border-radius: 8px; border: 2px solid #ddd;
+      background: white; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.15s;
+    }
+    .choice-btn.active { border-color: #667eea; background: #667eea; color: white; }
+
+    /* Add form */
+    .add-row { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+    .add-row label { font-weight: 600; color: #555; }
+    #new-word { width: 150px; }
+
+    /* Category filter */
+    .cat-filter { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+    .cat-filter span { font-weight: 600; color: #555; font-size: 0.9rem; }
+    .cat-tag {
+      padding: 0.2rem 0.6rem; border-radius: 20px; border: 1px solid #ddd;
+      background: white; font-size: 0.8rem; cursor: pointer; transition: all 0.15s;
+    }
+    .cat-tag:hover { background: #667eea; color: white; border-color: #667eea; }
+    .cat-tag.all-on  { background: #4CAF50; color: white; border-color: #4CAF50; }
+    .cat-tag.all-off { background: #f44336; color: white; border-color: #f44336; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    thead { background: #667eea; color: white; }
+    th { padding: 0.75rem 0.75rem; text-align: left; font-size: 0.85rem; white-space: nowrap; }
+    td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr.inactive td { opacity: 0.45; }
+    tr.inactive td:first-child { opacity: 1; }
+
+    .word-input {
+      font-weight: 600; font-size: 0.95rem; border: 2px solid #667eea;
+      border-radius: 6px; padding: 0.2rem 0.5rem; width: 110px;
+    }
+    .cat-select { font-size: 0.82rem; border-radius: 6px; border: 1px solid #ddd; padding: 0.2rem 0.4rem; }
+
+    .dots { display: flex; gap: 4px; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .dot.ok      { background: #4CAF50; }
+    .dot.missing { background: #ddd; }
+
+    .actions { display: flex; gap: 4px; align-items: center; }
+    .empty-row td { text-align: center; color: #aaa; padding: 2rem; }
+
+    .count-badge { background: rgba(255,255,255,0.25); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.8rem; margin-left: 0.4rem; }
+    #active-badge { background: #4CAF50; border-radius: 20px; padding: 0.25rem 0.8rem; font-size: 0.85rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Vocabulary Admin</h1>
+  <div class="header-right">
+    <label style="font-size:0.9rem">File:</label>
+    <select id="file-select"></select>
+    <span id="active-badge">0 active</span>
+    <button class="btn btn-save" onclick="saveAll()">💾 Save</button>
+    <div id="status">—</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Game config -->
+  <div class="card-panel">
+    <h3>⚙️ Game Settings</h3>
+    <div class="config-row">
+      <div class="config-item">
+        <label>Images per question:</label>
+        <div class="choice-btns" id="choice-btns">
+          <button class="choice-btn active" data-count="2" onclick="setChoiceCount(2)">2</button>
+          <button class="choice-btn"        data-count="3" onclick="setChoiceCount(3)">3</button>
+          <button class="choice-btn"        data-count="4" onclick="setChoiceCount(4)">4</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category quick-select -->
+  <div class="card-panel">
+    <h3>🏷️ Quick Select by Category</h3>
+    <div class="cat-filter" id="cat-filter">
+      <span>Toggle:</span>
+      <button class="cat-tag all-on"  onclick="selectAll(true)">✓ All</button>
+      <button class="cat-tag all-off" onclick="selectAll(false)">✗ None</button>
+    </div>
+  </div>
+
+  <!-- Add word -->
+  <div class="card-panel">
+    <h3>➕ Add New Word</h3>
+    <div class="add-row">
+      <label>Word:</label>
+      <input type="text" id="new-word" placeholder="e.g. cat" onkeydown="if(event.key==='Enter') addWord()">
+      <label>Category:</label>
+      <select id="new-category">
+        <option value="numbers">numbers</option>
+        <option value="greetings">greetings</option>
+        <option value="conversation">conversation</option>
+        <option value="colors">colors</option>
+        <option value="family">family</option>
+        <option value="body" selected>body</option>
+        <option value="animals">animals</option>
+        <option value="school">school</option>
+        <option value="actions">actions</option>
+      </select>
+      <button class="btn btn-add" onclick="addWord()">+ Add</button>
+    </div>
+  </div>
+
+  <!-- Word table -->
+  <table id="vocab-table">
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="check-all" onchange="toggleAll(this.checked)" title="Select all"></th>
+        <th>#</th>
+        <th>Word</th>
+        <th>Category</th>
+        <th>Images <span id="img-count" class="count-badge">—</span></th>
+        <th>Audio <span id="aud-count" class="count-badge">—</span></th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <tr class="empty-row"><td colspan="7">Loading...</td></tr>
+    </tbody>
+  </table>
+
+</main>
+
+<script>
+const CATEGORIES = ["numbers","greetings","conversation","colors","family","body","animals","school","actions"];
+let vocab = [];
+let assets = {};
+let currentFile = "vocabulary_demo.json";
+let choiceCount = 2;
+
+async function init() {
+  const files = await fetch("/api/files").then(r => r.json());
+  const sel = document.getElementById("file-select");
+  files.forEach(f => {
+    const opt = document.createElement("option");
+    opt.value = opt.textContent = f;
+    if (f === "vocabulary_demo.json") opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.onchange = () => { currentFile = sel.value; loadVocab(); };
+
+  const config = await fetch("/api/config").then(r => r.json());
+  choiceCount = config.choiceCount || 2;
+  currentFile = config.vocabFile || "vocabulary_demo.json";
+  sel.value = currentFile;
+  updateChoiceButtons();
+
+  buildCatFilter();
+  loadVocab();
+}
+
+async function loadVocab() {
+  setStatus("loading…", "");
+  vocab  = await fetch(`/api/vocab?file=${currentFile}`).then(r => r.json());
+  assets = await fetch(`/api/assets?file=${currentFile}`).then(r => r.json());
+  // Ensure all entries have active field (default true)
+  vocab.forEach(v => { if (v.active === undefined) v.active = true; });
+  renderTable();
+  setStatus("loaded", "ok");
+  setTimeout(() => setStatus("—", ""), 1500);
+}
+
+async function saveAll() {
+  setStatus("saving…", "");
+  const [r1, r2] = await Promise.all([
+    fetch("/api/vocab", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ file: currentFile, vocab })
+    }),
+    fetch("/api/config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ vocabFile: currentFile, choiceCount })
+    })
+  ]);
+  const ok = (await r1.json()).ok && (await r2.json()).ok;
+  setStatus(ok ? "✓ Saved" : "✗ Error", ok ? "ok" : "err");
+  setTimeout(() => setStatus("—", ""), 2000);
+}
+
+function addWord() {
+  const wordInput = document.getElementById("new-word");
+  const word = wordInput.value.trim().toLowerCase();
+  if (!word) return;
+  if (vocab.some(v => v.word === word)) { alert(`"${word}" already exists.`); return; }
+  const category = document.getElementById("new-category").value;
+  const key = word.replace(/ /g, "_");
+  vocab.push({
+    word, category, active: true,
+    images: [`assets/images/${key}_1.jpg`, `assets/images/${key}_2.jpg`, `assets/images/${key}_3.jpg`],
+    audio:  [`assets/audio/${key}_1.mp3`,  `assets/audio/${key}_2.mp3`,  `assets/audio/${key}_3.mp3`]
+  });
+  wordInput.value = "";
+  renderTable();
+  markUnsaved();
+}
+
+function deleteWord(idx) {
+  if (!confirm(`Delete "${vocab[idx].word}"?`)) return;
+  vocab.splice(idx, 1);
+  renderTable();
+  markUnsaved();
+}
+
+function moveWord(idx, dir) {
+  const t = idx + dir;
+  if (t < 0 || t >= vocab.length) return;
+  [vocab[idx], vocab[t]] = [vocab[t], vocab[idx]];
+  renderTable();
+  markUnsaved();
+}
+
+function toggleActive(idx, checked) {
+  vocab[idx].active = checked;
+  const row = document.getElementById(`row-${idx}`);
+  row.classList.toggle("inactive", !checked);
+  updateActiveBadge();
+  markUnsaved();
+}
+
+function toggleAll(checked) {
+  vocab.forEach(v => v.active = checked);
+  renderTable();
+  markUnsaved();
+}
+
+function selectCategory(cat) {
+  const anyOff = vocab.filter(v => v.category === cat).some(v => !v.active);
+  vocab.forEach(v => { if (v.category === cat) v.active = anyOff; });
+  renderTable();
+  markUnsaved();
+}
+
+function selectAll(val) {
+  vocab.forEach(v => v.active = val);
+  renderTable();
+  markUnsaved();
+}
+
+function setChoiceCount(n) {
+  choiceCount = n;
+  updateChoiceButtons();
+  markUnsaved();
+}
+
+function updateChoiceButtons() {
+  document.querySelectorAll(".choice-btn").forEach(btn => {
+    btn.classList.toggle("active", parseInt(btn.dataset.count) === choiceCount);
+  });
+}
+
+function buildCatFilter() {
+  const container = document.getElementById("cat-filter");
+  CATEGORIES.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.className = "cat-tag";
+    btn.textContent = cat;
+    btn.onclick = () => selectCategory(cat);
+    container.appendChild(btn);
+  });
+}
+
+function renderTable() {
+  const tbody = document.getElementById("table-body");
+  if (vocab.length === 0) {
+    tbody.innerHTML = `<tr class="empty-row"><td colspan="7">No words yet.</td></tr>`;
+    updateActiveBadge();
+    updateCounts();
+    return;
+  }
+  tbody.innerHTML = vocab.map((entry, i) => {
+    const a = assets[entry.word] || { images: [false,false,false], audio: [false,false,false] };
+    const imgDots = a.images.map(ok => `<span class="dot ${ok?'ok':'missing'}"></span>`).join("");
+    const audDots = a.audio.map(ok  => `<span class="dot ${ok?'ok':'missing'}"></span>`).join("");
+    const catOpts = CATEGORIES.map(c => `<option${c===entry.category?" selected":""}>${c}</option>`).join("");
+    const active  = entry.active !== false;
+    return `<tr id="row-${i}" class="${active?'':'inactive'}">
+      <td><input type="checkbox" ${active?"checked":""} onchange="toggleActive(${i},this.checked)"></td>
+      <td style="color:#aaa;font-size:.85rem">${i+1}</td>
+      <td><input class="word-input" value="${entry.word}" onchange="vocab[${i}].word=this.value.trim().toLowerCase();markUnsaved()"></td>
+      <td><select class="cat-select" onchange="vocab[${i}].category=this.value;markUnsaved()">${catOpts}</select></td>
+      <td><div class="dots">${imgDots}</div></td>
+      <td><div class="dots">${audDots}</div></td>
+      <td class="actions">
+        <button class="btn btn-up" onclick="moveWord(${i},-1)" ${i===0?"disabled":""}>▲</button>
+        <button class="btn btn-dn" onclick="moveWord(${i},1)"  ${i===vocab.length-1?"disabled":""}>▼</button>
+        <button class="btn btn-del" onclick="deleteWord(${i})">✕</button>
+      </td>
+    </tr>`;
+  }).join("");
+  updateActiveBadge();
+  updateCounts();
+  syncCheckAll();
+}
+
+function updateActiveBadge() {
+  const n = vocab.filter(v => v.active !== false).length;
+  document.getElementById("active-badge").textContent = `${n} active`;
+}
+
+function updateCounts() {
+  let imgReady = 0, audReady = 0;
+  vocab.forEach(entry => {
+    const a = assets[entry.word] || { images: [false,false,false], audio: [false,false,false] };
+    if (a.images.every(Boolean)) imgReady++;
+    if (a.audio.every(Boolean))  audReady++;
+  });
+  document.getElementById("img-count").textContent = `${imgReady}/${vocab.length}`;
+  document.getElementById("aud-count").textContent = `${audReady}/${vocab.length}`;
+}
+
+function syncCheckAll() {
+  const all = vocab.every(v => v.active !== false);
+  document.getElementById("check-all").checked = all;
+  document.getElementById("check-all").indeterminate = !all && vocab.some(v => v.active !== false);
+}
+
+function markUnsaved() { setStatus("● unsaved", ""); }
+
+function setStatus(msg, cls) {
+  const el = document.getElementById("status");
+  el.textContent = msg;
+  el.className = cls;
+}
+
+init();
+</script>
+</body>
+</html>

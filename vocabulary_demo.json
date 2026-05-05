@@ -1,0 +1,576 @@
+[
+  {
+    "word": "head",
+    "category": "body",
+    "images": [
+      "assets/images/body/head_1.jpg",
+      "assets/images/body/head_2.jpg",
+      "assets/images/body/head_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/head_1.mp3",
+      "assets/audio/body/head_2.mp3",
+      "assets/audio/body/head_3.mp3"
+    ]
+  },
+  {
+    "word": "hair",
+    "category": "body",
+    "images": [
+      "assets/images/body/hair_1.jpg",
+      "assets/images/body/hair_2.jpg",
+      "assets/images/body/hair_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/hair_1.mp3",
+      "assets/audio/body/hair_2.mp3",
+      "assets/audio/body/hair_3.mp3"
+    ]
+  },
+  {
+    "word": "eye",
+    "category": "body",
+    "images": [
+      "assets/images/body/eye_1.jpg",
+      "assets/images/body/eye_2.jpg",
+      "assets/images/body/eye_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/eye_1.mp3",
+      "assets/audio/body/eye_2.mp3",
+      "assets/audio/body/eye_3.mp3"
+    ]
+  },
+  {
+    "word": "ear",
+    "category": "body",
+    "images": [
+      "assets/images/body/ear_1.jpg",
+      "assets/images/body/ear_2.jpg",
+      "assets/images/body/ear_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/ear_1.mp3",
+      "assets/audio/body/ear_2.mp3",
+      "assets/audio/body/ear_3.mp3"
+    ]
+  },
+  {
+    "word": "nose",
+    "category": "body",
+    "images": [
+      "assets/images/body/nose_1.jpg",
+      "assets/images/body/nose_2.jpg",
+      "assets/images/body/nose_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/nose_1.mp3",
+      "assets/audio/body/nose_2.mp3",
+      "assets/audio/body/nose_3.mp3"
+    ]
+  },
+  {
+    "word": "mouth",
+    "category": "body",
+    "images": [
+      "assets/images/body/mouth_1.jpg",
+      "assets/images/body/mouth_2.jpg",
+      "assets/images/body/mouth_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/mouth_1.mp3",
+      "assets/audio/body/mouth_2.mp3",
+      "assets/audio/body/mouth_3.mp3"
+    ]
+  },
+  {
+    "word": "hand",
+    "category": "body",
+    "images": [
+      "assets/images/body/hand_1.jpg",
+      "assets/images/body/hand_2.jpg",
+      "assets/images/body/hand_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/hand_1.mp3",
+      "assets/audio/body/hand_2.mp3",
+      "assets/audio/body/hand_3.mp3"
+    ]
+  },
+  {
+    "word": "arm",
+    "category": "body",
+    "images": [
+      "assets/images/body/arm_1.jpg",
+      "assets/images/body/arm_2.jpg",
+      "assets/images/body/arm_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/arm_1.mp3",
+      "assets/audio/body/arm_2.mp3",
+      "assets/audio/body/arm_3.mp3"
+    ]
+  },
+  {
+    "word": "leg",
+    "category": "body",
+    "images": [
+      "assets/images/body/leg_1.jpg",
+      "assets/images/body/leg_2.jpg",
+      "assets/images/body/leg_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/leg_1.mp3",
+      "assets/audio/body/leg_2.mp3",
+      "assets/audio/body/leg_3.mp3"
+    ]
+  },
+  {
+    "word": "foot",
+    "category": "body",
+    "images": [
+      "assets/images/body/foot_1.jpg",
+      "assets/images/body/foot_2.jpg",
+      "assets/images/body/foot_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/body/foot_1.mp3",
+      "assets/audio/body/foot_2.mp3",
+      "assets/audio/body/foot_3.mp3"
+    ]
+  },
+  {
+    "word": "pen",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/pen_1.jpg",
+      "assets/images/classroom/pen_2.jpg",
+      "assets/images/classroom/pen_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/pen_1.mp3",
+      "assets/audio/classroom/pen_2.mp3",
+      "assets/audio/classroom/pen_3.mp3"
+    ]
+  },
+  {
+    "word": "book",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/book_1.jpg",
+      "assets/images/classroom/book_2.jpg",
+      "assets/images/classroom/book_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/book_1.mp3",
+      "assets/audio/classroom/book_2.mp3",
+      "assets/audio/classroom/book_3.mp3"
+    ]
+  },
+  {
+    "word": "desk",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/desk_1.jpg",
+      "assets/images/classroom/desk_2.jpg",
+      "assets/images/classroom/desk_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/desk_1.mp3",
+      "assets/audio/classroom/desk_2.mp3",
+      "assets/audio/classroom/desk_3.mp3"
+    ]
+  },
+  {
+    "word": "chair",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/chair_1.jpg",
+      "assets/images/classroom/chair_2.jpg",
+      "assets/images/classroom/chair_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/chair_1.mp3",
+      "assets/audio/classroom/chair_2.mp3",
+      "assets/audio/classroom/chair_3.mp3"
+    ]
+  },
+  {
+    "word": "bag",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/bag_1.jpg",
+      "assets/images/classroom/bag_2.jpg",
+      "assets/images/classroom/bag_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/bag_1.mp3",
+      "assets/audio/classroom/bag_2.mp3",
+      "assets/audio/classroom/bag_3.mp3"
+    ]
+  },
+  {
+    "word": "ruler",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/ruler_1.jpg",
+      "assets/images/classroom/ruler_2.jpg",
+      "assets/images/classroom/ruler_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/ruler_1.mp3",
+      "assets/audio/classroom/ruler_2.mp3",
+      "assets/audio/classroom/ruler_3.mp3"
+    ]
+  },
+  {
+    "word": "pencil",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/pencil_1.jpg",
+      "assets/images/classroom/pencil_2.jpg",
+      "assets/images/classroom/pencil_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/pencil_1.mp3",
+      "assets/audio/classroom/pencil_2.mp3",
+      "assets/audio/classroom/pencil_3.mp3"
+    ]
+  },
+  {
+    "word": "eraser",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/eraser_1.jpg",
+      "assets/images/classroom/eraser_2.jpg",
+      "assets/images/classroom/eraser_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/eraser_1.mp3",
+      "assets/audio/classroom/eraser_2.mp3",
+      "assets/audio/classroom/eraser_3.mp3"
+    ]
+  },
+  {
+    "word": "board",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/board_1.jpg",
+      "assets/images/classroom/board_2.jpg",
+      "assets/images/classroom/board_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/board_1.mp3",
+      "assets/audio/classroom/board_2.mp3",
+      "assets/audio/classroom/board_3.mp3"
+    ]
+  },
+  {
+    "word": "door",
+    "category": "classroom",
+    "images": [
+      "assets/images/classroom/door_1.jpg",
+      "assets/images/classroom/door_2.jpg",
+      "assets/images/classroom/door_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/classroom/door_1.mp3",
+      "assets/audio/classroom/door_2.mp3",
+      "assets/audio/classroom/door_3.mp3"
+    ]
+  },
+  {
+    "word": "dog",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/dog_1.jpg",
+      "assets/images/animals/dog_2.jpg",
+      "assets/images/animals/dog_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/dog_1.mp3",
+      "assets/audio/animals/dog_2.mp3",
+      "assets/audio/animals/dog_3.mp3"
+    ]
+  },
+  {
+    "word": "cat",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/cat_1.jpg",
+      "assets/images/animals/cat_2.jpg",
+      "assets/images/animals/cat_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/cat_1.mp3",
+      "assets/audio/animals/cat_2.mp3",
+      "assets/audio/animals/cat_3.mp3"
+    ]
+  },
+  {
+    "word": "bird",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/bird_1.jpg",
+      "assets/images/animals/bird_2.jpg",
+      "assets/images/animals/bird_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/bird_1.mp3",
+      "assets/audio/animals/bird_2.mp3",
+      "assets/audio/animals/bird_3.mp3"
+    ]
+  },
+  {
+    "word": "fish",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/fish_1.jpg",
+      "assets/images/animals/fish_2.jpg",
+      "assets/images/animals/fish_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/fish_1.mp3",
+      "assets/audio/animals/fish_2.mp3",
+      "assets/audio/animals/fish_3.mp3"
+    ]
+  },
+  {
+    "word": "pig",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/pig_1.jpg",
+      "assets/images/animals/pig_2.jpg",
+      "assets/images/animals/pig_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/pig_1.mp3",
+      "assets/audio/animals/pig_2.mp3",
+      "assets/audio/animals/pig_3.mp3"
+    ]
+  },
+  {
+    "word": "duck",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/duck_1.jpg",
+      "assets/images/animals/duck_2.jpg",
+      "assets/images/animals/duck_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/duck_1.mp3",
+      "assets/audio/animals/duck_2.mp3",
+      "assets/audio/animals/duck_3.mp3"
+    ]
+  },
+  {
+    "word": "elephant",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/elephant_1.jpg",
+      "assets/images/animals/elephant_2.jpg",
+      "assets/images/animals/elephant_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/elephant_1.mp3",
+      "assets/audio/animals/elephant_2.mp3",
+      "assets/audio/animals/elephant_3.mp3"
+    ]
+  },
+  {
+    "word": "lion",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/lion_1.jpg",
+      "assets/images/animals/lion_2.jpg",
+      "assets/images/animals/lion_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/lion_1.mp3",
+      "assets/audio/animals/lion_2.mp3",
+      "assets/audio/animals/lion_3.mp3"
+    ]
+  },
+  {
+    "word": "tiger",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/tiger_1.jpg",
+      "assets/images/animals/tiger_2.jpg",
+      "assets/images/animals/tiger_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/tiger_1.mp3",
+      "assets/audio/animals/tiger_2.mp3",
+      "assets/audio/animals/tiger_3.mp3"
+    ]
+  },
+  {
+    "word": "monkey",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/monkey_1.jpg",
+      "assets/images/animals/monkey_2.jpg",
+      "assets/images/animals/monkey_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/monkey_1.mp3",
+      "assets/audio/animals/monkey_2.mp3",
+      "assets/audio/animals/monkey_3.mp3"
+    ]
+  },
+  {
+    "word": "rabbit",
+    "category": "animals",
+    "images": [
+      "assets/images/animals/rabbit_1.jpg",
+      "assets/images/animals/rabbit_2.jpg",
+      "assets/images/animals/rabbit_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/animals/rabbit_1.mp3",
+      "assets/audio/animals/rabbit_2.mp3",
+      "assets/audio/animals/rabbit_3.mp3"
+    ]
+  },
+  {
+    "word": "stand",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/stand_1.jpg",
+      "assets/images/actions/stand_2.jpg",
+      "assets/images/actions/stand_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/stand_1.mp3",
+      "assets/audio/actions/stand_2.mp3",
+      "assets/audio/actions/stand_3.mp3"
+    ]
+  },
+  {
+    "word": "sit",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/sit_1.jpg",
+      "assets/images/actions/sit_2.jpg",
+      "assets/images/actions/sit_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/sit_1.mp3",
+      "assets/audio/actions/sit_2.mp3",
+      "assets/audio/actions/sit_3.mp3"
+    ]
+  },
+  {
+    "word": "run",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/run_1.jpg",
+      "assets/images/actions/run_2.jpg",
+      "assets/images/actions/run_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/run_1.mp3",
+      "assets/audio/actions/run_2.mp3",
+      "assets/audio/actions/run_3.mp3"
+    ]
+  },
+  {
+    "word": "jump",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/jump_1.jpg",
+      "assets/images/actions/jump_2.jpg",
+      "assets/images/actions/jump_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/jump_1.mp3",
+      "assets/audio/actions/jump_2.mp3",
+      "assets/audio/actions/jump_3.mp3"
+    ]
+  },
+  {
+    "word": "walk",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/walk_1.jpg",
+      "assets/images/actions/walk_2.jpg",
+      "assets/images/actions/walk_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/walk_1.mp3",
+      "assets/audio/actions/walk_2.mp3",
+      "assets/audio/actions/walk_3.mp3"
+    ]
+  },
+  {
+    "word": "dance",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/dance_1.jpg",
+      "assets/images/actions/dance_2.jpg",
+      "assets/images/actions/dance_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/dance_1.mp3",
+      "assets/audio/actions/dance_2.mp3",
+      "assets/audio/actions/dance_3.mp3"
+    ]
+  },
+  {
+    "word": "sing",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/sing_1.jpg",
+      "assets/images/actions/sing_2.jpg",
+      "assets/images/actions/sing_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/sing_1.mp3",
+      "assets/audio/actions/sing_2.mp3",
+      "assets/audio/actions/sing_3.mp3"
+    ]
+  },
+  {
+    "word": "read",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/read_1.jpg",
+      "assets/images/actions/read_2.jpg",
+      "assets/images/actions/read_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/read_1.mp3",
+      "assets/audio/actions/read_2.mp3",
+      "assets/audio/actions/read_3.mp3"
+    ]
+  },
+  {
+    "word": "write",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/write_1.jpg",
+      "assets/images/actions/write_2.jpg",
+      "assets/images/actions/write_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/write_1.mp3",
+      "assets/audio/actions/write_2.mp3",
+      "assets/audio/actions/write_3.mp3"
+    ]
+  },
+  {
+    "word": "draw",
+    "category": "actions",
+    "images": [
+      "assets/images/actions/draw_1.jpg",
+      "assets/images/actions/draw_2.jpg",
+      "assets/images/actions/draw_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/actions/draw_1.mp3",
+      "assets/audio/actions/draw_2.mp3",
+      "assets/audio/actions/draw_3.mp3"
+    ]
+  }
+]
