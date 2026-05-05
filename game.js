@@ -54,7 +54,8 @@ function nextQuestion() {
 
   current = queue.shift();
 
-  const distractors = shuffle(vocab.filter(v => v.word !== current.word))
+  const pool = selectedCategory === 'all' ? vocab : vocab.filter(v => v.category === selectedCategory);
+  const distractors = shuffle(pool.filter(v => v.word !== current.word))
     .slice(0, choiceCount - 1);
 
   const choices = shuffle([

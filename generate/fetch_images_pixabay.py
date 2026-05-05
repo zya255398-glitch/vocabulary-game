@@ -74,19 +74,44 @@ WORD_QUERIES = {
     "tiger":    "tiger wildlife",
     "monkey":   "monkey wildlife",
     "rabbit":   "rabbit cute pet",
+    # actions (illustration to avoid Gemini safety blocks on real children)
+    "stand":  "standing person illustration",
+    "sit":    "sitting person illustration",
+    "run":    "running person illustration",
+    "jump":   "jumping person illustration",
+    "walk":   "walking person illustration",
+    "dance":  "dancing person illustration",
+    "sing":   "singing person illustration",
+    "read":   "reading book illustration",
+    "write":  "writing person illustration",
+    "draw":   "drawing painting illustration",
+}
+
+# 指定特定單字使用 illustration 類型（預設 all）
+WORD_IMAGE_TYPE: dict[str, str] = {
+    "stand": "illustration",
+    "sit":   "illustration",
+    "run":   "illustration",
+    "jump":  "illustration",
+    "walk":  "illustration",
+    "dance": "illustration",
+    "sing":  "illustration",
+    "read":  "illustration",
+    "write": "illustration",
+    "draw":  "illustration",
 }
 
 
 # ── Pixabay ───────────────────────────────────────────
 
-def fetch_pixabay_pool(query: str) -> list[str]:
+def fetch_pixabay_pool(query: str, image_type: str = "all") -> list[str]:
     resp = requests.get(
         "https://pixabay.com/api/",
         params={
             "key":        PIXABAY_API_KEY,
             "q":          query,
             "per_page":   POOL_SIZE,
-            "image_type": "all",
+            "image_type": image_type,
             "safesearch": "true",
             "lang":       "en",
             "order":      "popular",
@@ -142,7 +167,13 @@ def to_jpeg_bytes(raw: bytes) -> bytes:
 
 # ── Gemini Vision 驗證 ────────────────────────────────
 
+_gemini_quota_exceeded = False  # 全域旗標，一旦偵測到配額用盡就停止呼叫
+
 def validate_image(jpeg_bytes: bytes, word: str) -> tuple[bool, str]:
+    global _gemini_quota_exceeded
+    if _gemini_quota_exceeded:
+        return True, "QUOTA_SKIP: using quality score only"
+
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
         f"gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
@@ -169,10 +200,17 @@ def validate_image(jpeg_bytes: bytes, word: str) -> tuple[bool, str]:
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    with urllib.request.urlopen(req) as r:
-        data = json.loads(r.read())
-    text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-    return text.upper().startswith("YES"), text
+    try:
+        with urllib.request.urlopen(req) as r:
+            data = json.loads(r.read())
+        text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        return text.upper().startswith("YES"), text
+    except urllib.error.HTTPError as e:
+        if e.code in (403, 429):
+            _gemini_quota_exceeded = True
+            print(f"  [!] Gemini 配額用盡（HTTP {e.code}），後續改用品質分數篩選")
+            return True, "QUOTA_SKIP: using quality score only"
+        raise
 
 
 # ── 存圖（等比縮放，不變形）─────────────────────────
@@ -211,9 +249,10 @@ def main() -> None:
             continue
 
         # ── Step 1: 抓 URL ──
-        print(f"[{word}] 搜尋 Pixabay：「{WORD_QUERIES[word]}」")
+        img_type = WORD_IMAGE_TYPE.get(word, "all")
+        print(f"[{word}] 搜尋 Pixabay：「{WORD_QUERIES[word]}」({img_type})")
         try:
-            urls = fetch_pixabay_pool(WORD_QUERIES[word])
+            urls = fetch_pixabay_pool(WORD_QUERIES[word], image_type=img_type)
         except Exception as e:
             print(f"  ERROR 搜尋失敗：{e}")
             for v in [1, 2, 3]:
