@@ -13,10 +13,10 @@ let _volume = 1;
 // ── Boot ──────────────────────────────────────────────
 async function init() {
   let config = { vocabFile: "vocabulary_demo.json", choiceCount: 2 };
-  try { config = await fetch("config.json").then(r => r.json()); } catch(e) {}
+  try { config = await fetch("config.json", { cache: "no-store" }).then(r => r.json()); } catch(e) {}
   choiceCount = config.choiceCount || 2;
 
-  const all = await fetch(config.vocabFile).then(r => r.json());
+  const all = await fetch(config.vocabFile, { cache: "no-store" }).then(r => r.json());
   vocab = all.filter(v => v.active !== false);
 
   document.getElementById("start-btn").addEventListener("click", () => { unlockAudio(); startGame(); });
@@ -54,8 +54,10 @@ function nextQuestion() {
 
   current = queue.shift();
 
-  const pool = selectedCategory === 'all' ? vocab : vocab.filter(v => v.category === selectedCategory);
-  const distractors = shuffle(pool.filter(v => v.word !== current.word))
+  const distractorPool = selectedCategory === 'all'
+    ? vocab.filter(v => v.category === current.category)
+    : vocab.filter(v => v.category === selectedCategory);
+  const distractors = shuffle(distractorPool.filter(v => v.word !== current.word))
     .slice(0, choiceCount - 1);
 
   const choices = shuffle([

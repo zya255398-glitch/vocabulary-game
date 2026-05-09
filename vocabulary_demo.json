@@ -280,6 +280,66 @@
     ]
   },
   {
+    "word": "red",
+    "category": "colors",
+    "images": ["assets/images/colors/red_1.jpg","assets/images/colors/red_2.jpg","assets/images/colors/red_3.jpg"],
+    "audio":  ["assets/audio/colors/red_1.mp3","assets/audio/colors/red_2.mp3","assets/audio/colors/red_3.mp3"]
+  },
+  {
+    "word": "blue",
+    "category": "colors",
+    "images": ["assets/images/colors/blue_1.jpg","assets/images/colors/blue_2.jpg","assets/images/colors/blue_3.jpg"],
+    "audio":  ["assets/audio/colors/blue_1.mp3","assets/audio/colors/blue_2.mp3","assets/audio/colors/blue_3.mp3"]
+  },
+  {
+    "word": "green",
+    "category": "colors",
+    "images": ["assets/images/colors/green_1.jpg","assets/images/colors/green_2.jpg","assets/images/colors/green_3.jpg"],
+    "audio":  ["assets/audio/colors/green_1.mp3","assets/audio/colors/green_2.mp3","assets/audio/colors/green_3.mp3"]
+  },
+  {
+    "word": "yellow",
+    "category": "colors",
+    "images": ["assets/images/colors/yellow_1.jpg","assets/images/colors/yellow_2.jpg","assets/images/colors/yellow_3.jpg"],
+    "audio":  ["assets/audio/colors/yellow_1.mp3","assets/audio/colors/yellow_2.mp3","assets/audio/colors/yellow_3.mp3"]
+  },
+  {
+    "word": "orange",
+    "category": "colors",
+    "images": ["assets/images/colors/orange_1.jpg","assets/images/colors/orange_2.jpg","assets/images/colors/orange_3.jpg"],
+    "audio":  ["assets/audio/colors/orange_1.mp3","assets/audio/colors/orange_2.mp3","assets/audio/colors/orange_3.mp3"]
+  },
+  {
+    "word": "pink",
+    "category": "colors",
+    "images": ["assets/images/colors/pink_1.jpg","assets/images/colors/pink_2.jpg","assets/images/colors/pink_3.jpg"],
+    "audio":  ["assets/audio/colors/pink_1.mp3","assets/audio/colors/pink_2.mp3","assets/audio/colors/pink_3.mp3"]
+  },
+  {
+    "word": "purple",
+    "category": "colors",
+    "images": ["assets/images/colors/purple_1.jpg","assets/images/colors/purple_2.jpg","assets/images/colors/purple_3.jpg"],
+    "audio":  ["assets/audio/colors/purple_1.mp3","assets/audio/colors/purple_2.mp3","assets/audio/colors/purple_3.mp3"]
+  },
+  {
+    "word": "black",
+    "category": "colors",
+    "images": ["assets/images/colors/black_1.jpg","assets/images/colors/black_2.jpg","assets/images/colors/black_3.jpg"],
+    "audio":  ["assets/audio/colors/black_1.mp3","assets/audio/colors/black_2.mp3","assets/audio/colors/black_3.mp3"]
+  },
+  {
+    "word": "white",
+    "category": "colors",
+    "images": ["assets/images/colors/white_1.jpg","assets/images/colors/white_2.jpg","assets/images/colors/white_3.jpg"],
+    "audio":  ["assets/audio/colors/white_1.mp3","assets/audio/colors/white_2.mp3","assets/audio/colors/white_3.mp3"]
+  },
+  {
+    "word": "brown",
+    "category": "colors",
+    "images": ["assets/images/colors/brown_1.jpg","assets/images/colors/brown_2.jpg","assets/images/colors/brown_3.jpg"],
+    "audio":  ["assets/audio/colors/brown_1.mp3","assets/audio/colors/brown_2.mp3","assets/audio/colors/brown_3.mp3"]
+  },
+  {
     "word": "dog",
     "category": "animals",
     "images": [
@@ -571,6 +631,104 @@
       "assets/audio/actions/draw_1.mp3",
       "assets/audio/actions/draw_2.mp3",
       "assets/audio/actions/draw_3.mp3"
+    ]
+  },
+  {
+    "word": "me",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/me_1.jpg",
+      "assets/images/story_look_at_me/me_2.jpg",
+      "assets/images/story_look_at_me/me_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/me_1.mp3",
+      "assets/audio/story_look_at_me/me_2.mp3",
+      "assets/audio/story_look_at_me/me_3.mp3"
+    ]
+  },
+  {
+    "word": "mom",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/mom_1.jpg",
+      "assets/images/story_look_at_me/mom_2.jpg",
+      "assets/images/story_look_at_me/mom_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/mom_1.mp3",
+      "assets/audio/story_look_at_me/mom_2.mp3",
+      "assets/audio/story_look_at_me/mom_3.mp3"
+    ]
+  },
+  {
+    "word": "bike",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/bike_1.jpg",
+      "assets/images/story_look_at_me/bike_2.jpg",
+      "assets/images/story_look_at_me/bike_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/bike_1.mp3",
+      "assets/audio/story_look_at_me/bike_2.mp3",
+      "assets/audio/story_look_at_me/bike_3.mp3"
+    ]
+  },
+  {
+    "word": "really",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/really_1.jpg",
+      "assets/images/story_look_at_me/really_2.jpg",
+      "assets/images/story_look_at_me/really_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/really_1.mp3",
+      "assets/audio/story_look_at_me/really_2.mp3",
+      "assets/audio/story_look_at_me/really_3.mp3"
+    ]
+  },
+  {
+    "word": "look at",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/look_at_1.jpg",
+      "assets/images/story_look_at_me/look_at_2.jpg",
+      "assets/images/story_look_at_me/look_at_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/look_at_1.mp3",
+      "assets/audio/story_look_at_me/look_at_2.mp3",
+      "assets/audio/story_look_at_me/look_at_3.mp3"
+    ]
+  },
+  {
+    "word": "make a mess",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/make_a_mess_1.jpg",
+      "assets/images/story_look_at_me/make_a_mess_2.jpg",
+      "assets/images/story_look_at_me/make_a_mess_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/make_a_mess_1.mp3",
+      "assets/audio/story_look_at_me/make_a_mess_2.mp3",
+      "assets/audio/story_look_at_me/make_a_mess_3.mp3"
+    ]
+  },
+  {
+    "word": "next time",
+    "category": "story_look_at_me",
+    "images": [
+      "assets/images/story_look_at_me/next_time_1.jpg",
+      "assets/images/story_look_at_me/next_time_2.jpg",
+      "assets/images/story_look_at_me/next_time_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_look_at_me/next_time_1.mp3",
+      "assets/audio/story_look_at_me/next_time_2.mp3",
+      "assets/audio/story_look_at_me/next_time_3.mp3"
     ]
   }
 ]
