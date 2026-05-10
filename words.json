@@ -61,5 +61,12 @@
   {"word": "really",      "category": "story_look_at_me", "query": "child open mouth disbelief shocked surprise", "labels": ["really", "surprised", "expression"]},
   {"word": "look at",     "category": "story_look_at_me", "query": "child watching attentive amazed nature",     "labels": ["look", "looking", "pointing"]},
   {"word": "make a mess", "category": "story_look_at_me", "query": "child dirty food face eating messy",  "labels": ["mess", "making", "spilling"]},
-  {"word": "next time",   "category": "story_look_at_me", "query": "child thumbs up okay next try again",  "labels": ["next", "time", "promise"]}
+  {"word": "next time",   "category": "story_look_at_me", "query": "child thumbs up okay next try again",  "labels": ["next", "time", "promise"]},
+
+  {"word": "Big Feet",               "category": "story_big_feet", "query": "big cartoon feet on floor", "labels": ["big", "feet", "large"]},
+  {"word": "Come and look at this.", "category": "story_big_feet", "query": "child calling friend to look at something exciting", "labels": ["come", "look", "this"]},
+  {"word": "Is it a big monster?",   "category": "story_big_feet", "query": "child looking scared at big shadow monster", "labels": ["monster", "big", "scary"]},
+  {"word": "Is it a big dinosaur?",  "category": "story_big_feet", "query": "child imagining cartoon dinosaur", "labels": ["dinosaur", "big"]},
+  {"word": "Is it a big giant?",     "category": "story_big_feet", "query": "child imagining tall giant", "labels": ["giant", "big", "tall"]},
+  {"word": "No. It is Dad.",         "category": "story_big_feet", "query": "cartoon dad with big feet smiling child relieved", "labels": ["dad", "father", "no"]}
 ]

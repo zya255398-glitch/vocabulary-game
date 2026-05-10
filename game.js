@@ -10,6 +10,24 @@ let totalCorrect = 0;
 let missedWords = [];
 let _volume = 1;
 
+// ── File existence check ───────────────────────────────
+async function fileExists(url) {
+  try {
+    const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+    return r.ok;
+  } catch { return false; }
+}
+
+async function filterMissingFiles(entries) {
+  return Promise.all(entries.map(async entry => {
+    const [validImages, validAudio] = await Promise.all([
+      Promise.all((entry.images || []).map(src => fileExists(src).then(ok => ok ? src : null))),
+      Promise.all((entry.audio  || []).map(src => fileExists(src).then(ok => ok ? src : null)))
+    ]);
+    return { ...entry, images: validImages.filter(Boolean), audio: validAudio.filter(Boolean) };
+  }));
+}
+
 // ── Boot ──────────────────────────────────────────────
 async function init() {
   let config = { vocabFile: "vocabulary_demo.json", choiceCount: 2 };
@@ -17,7 +35,10 @@ async function init() {
   choiceCount = config.choiceCount || 2;
 
   const all = await fetch(config.vocabFile, { cache: "no-store" }).then(r => r.json());
-  vocab = all.filter(v => v.active !== false);
+  const active = all.filter(v => v.active !== false);
+  const checked = await filterMissingFiles(active);
+  // drop entries with no valid images OR no valid audio
+  vocab = checked.filter(v => v.images.length > 0 && v.audio.length > 0);
 
   document.getElementById("start-btn").addEventListener("click", () => { unlockAudio(); startGame(); });
   document.getElementById("replay-btn").addEventListener("click", () => { unlockAudio(); startGame(); });

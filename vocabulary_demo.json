@@ -730,5 +730,89 @@
       "assets/audio/story_look_at_me/next_time_2.mp3",
       "assets/audio/story_look_at_me/next_time_3.mp3"
     ]
+  },
+  {
+    "word": "Big Feet",
+    "category": "story_big_feet",
+    "images": [
+      "assets/images/story_big_feet/big_feet_1.jpg",
+      "assets/images/story_big_feet/big_feet_2.jpg",
+      "assets/images/story_big_feet/big_feet_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_big_feet/big_feet_1.mp3",
+      "assets/audio/story_big_feet/big_feet_2.mp3",
+      "assets/audio/story_big_feet/big_feet_3.mp3"
+    ]
+  },
+  {
+    "word": "Come and look at this.",
+    "category": "story_big_feet",
+    "images": [
+      "assets/images/story_big_feet/come_and_look_at_this_1.jpg",
+      "assets/images/story_big_feet/come_and_look_at_this_2.jpg",
+      "assets/images/story_big_feet/come_and_look_at_this_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_big_feet/come_and_look_at_this_1.mp3",
+      "assets/audio/story_big_feet/come_and_look_at_this_2.mp3",
+      "assets/audio/story_big_feet/come_and_look_at_this_3.mp3"
+    ]
+  },
+  {
+    "word": "Is it a big monster?",
+    "category": "story_big_feet",
+    "images": [
+      "assets/images/story_big_feet/is_it_a_big_monster_1.jpg",
+      "assets/images/story_big_feet/is_it_a_big_monster_2.jpg",
+      "assets/images/story_big_feet/is_it_a_big_monster_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_big_feet/is_it_a_big_monster_1.mp3",
+      "assets/audio/story_big_feet/is_it_a_big_monster_2.mp3",
+      "assets/audio/story_big_feet/is_it_a_big_monster_3.mp3"
+    ]
+  },
+  {
+    "word": "Is it a big dinosaur?",
+    "category": "story_big_feet",
+    "images": [
+      "assets/images/story_big_feet/is_it_a_big_dinosaur_1.jpg",
+      "assets/images/story_big_feet/is_it_a_big_dinosaur_2.jpg",
+      "assets/images/story_big_feet/is_it_a_big_dinosaur_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_big_feet/is_it_a_big_dinosaur_1.mp3",
+      "assets/audio/story_big_feet/is_it_a_big_dinosaur_2.mp3",
+      "assets/audio/story_big_feet/is_it_a_big_dinosaur_3.mp3"
+    ]
+  },
+  {
+    "word": "Is it a big giant?",
+    "category": "story_big_feet",
+    "images": [
+      "assets/images/story_big_feet/is_it_a_big_giant_1.jpg",
+      "assets/images/story_big_feet/is_it_a_big_giant_2.jpg",
+      "assets/images/story_big_feet/is_it_a_big_giant_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_big_feet/is_it_a_big_giant_1.mp3",
+      "assets/audio/story_big_feet/is_it_a_big_giant_2.mp3",
+      "assets/audio/story_big_feet/is_it_a_big_giant_3.mp3"
+    ]
+  },
+  {
+    "word": "No. It is Dad.",
+    "category": "story_big_feet",
+    "images": [
+      "assets/images/story_big_feet/no_it_is_dad_1.jpg",
+      "assets/images/story_big_feet/no_it_is_dad_2.jpg",
+      "assets/images/story_big_feet/no_it_is_dad_3.jpg"
+    ],
+    "audio": [
+      "assets/audio/story_big_feet/no_it_is_dad_1.mp3",
+      "assets/audio/story_big_feet/no_it_is_dad_2.mp3",
+      "assets/audio/story_big_feet/no_it_is_dad_3.mp3"
+    ]
   }
 ]
